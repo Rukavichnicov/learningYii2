@@ -1,4 +1,5 @@
 <?php
+
 namespace app\modules\api\controllers;
 
 use app\modules\api\models\Book;
@@ -13,6 +14,12 @@ class BookController extends Controller
         foreach ($books as $book) {
             $authors[$book->id] = $book->authors;
         }
-        return $books;
+        return ['books' => $books, 'authors' => $authors];
+    }
+
+    public function actionView($id)
+    {
+        $book = Book::find()->where(['id' => $id])->one();
+        return $book;
     }
 }
