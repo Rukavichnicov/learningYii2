@@ -55,6 +55,11 @@ $config = [
             ],
         ],
     ],
+    'container' => [
+        'definitions' => [
+            'app\components\MyInterface' => 'app\components\MyClass'
+        ],
+    ],
     'params' => $params,
 ];
 

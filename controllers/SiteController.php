@@ -2,8 +2,9 @@
 
 namespace app\controllers;
 
+use app\components\MyClass;
+use app\components\MyInterface;
 use app\models\SignupForm;
-use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -123,8 +124,9 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
+    public function actionAbout(MyInterface $myClass)
     {
+        $result = $myClass->myMethod();
         return $this->render('about');
     }
     public function actionSignup()
