@@ -11,23 +11,12 @@ $this->title = 'Книги';
     <table class="table">
         <thead class="table">
         <th>Наименование книги</th>
-        <th>Авторы</th>
         <th>Описание</th>
         </thead>
         <tbody class="table">
         <?php foreach ($books as $book): ?>
         <tr>
             <td><?= $book->name ?></td>
-            <td>
-                <?=
-                $fullNameAuthors = '';
-                foreach ($book->authors as $author) {
-                    $fullNameAuthors .= $author->full_name . ', ';
-                }
-                $fullNameAuthors = trim($fullNameAuthors, ', ');
-                echo $fullNameAuthors;
-                ?>
-            </td>
             <td><?= $book->description ?></td>
         </tr>
         <?php endforeach; ?>
